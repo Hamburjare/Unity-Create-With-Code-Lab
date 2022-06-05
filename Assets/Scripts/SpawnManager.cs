@@ -24,10 +24,10 @@ public class SpawnManager : MonoBehaviour
     {
         if (UIManager.Instance.isGameActive)
         {
-            // Randomly generate animal index and spawn position
-            int animalIndex = Random.Range(0, meteorPrefabs.Length);
+            // Randomly generate meteor index and spawn position
+            int meteorIndex = Random.Range(0, meteorPrefabs.Length);
             Vector3 spawnPos = new Vector3(spawnPosX, 0, Random.Range(-spawnRangeZ, spawnRangeZ + 1));
-            Instantiate(meteorPrefabs[animalIndex], spawnPos, meteorPrefabs[animalIndex].transform.rotation);
+            Instantiate(meteorPrefabs[meteorIndex], spawnPos, meteorPrefabs[meteorIndex].transform.rotation);
         }
         
     }

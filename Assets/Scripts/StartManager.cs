@@ -4,16 +4,12 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StartManager : MonoBehaviour
+public class StartManager : UIManager
 {
 
     public GameObject loadingScreen;
     public Slider slider;
-    public Button quitButton;
 
-    public Button startButton;
-
-    public Button optionsButton;
 
 
     public void LoadScene()
@@ -33,10 +29,5 @@ public class StartManager : MonoBehaviour
             slider.value = progress;
             yield return null;
         }
-    }
-
-    public void QuitGame()
-    {
-        UIManager.Instance.QuitButton();
     }
 }

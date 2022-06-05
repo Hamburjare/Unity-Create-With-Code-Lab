@@ -1001,8 +1001,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2087620502}
-        m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2247,8 +2247,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eacb9ea78f106544b98b1a2ede7b48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitButton: {fileID: 846391166}
+  resumeButton: {fileID: 0}
+  pauseText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  scoreText: {fileID: 0}
+  isGameActive: 0
+  restartButton: {fileID: 0}
   loadingScreen: {fileID: 1877669191}
   slider: {fileID: 1320774703}
-  quitButton: {fileID: 846391166}
   startButton: {fileID: 81273032}
   optionsButton: {fileID: 334897623}

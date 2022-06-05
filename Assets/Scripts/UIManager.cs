@@ -14,14 +14,12 @@ using UnityEditor;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    public Button quitButton;
-    public Button resumeButton;
-    public TextMeshProUGUI pauseText;
-    public TextMeshProUGUI gameOverText;
+
+    public GameObject pauseUI;
+    public GameObject gameOverUI;
     public TextMeshProUGUI scoreText;
     private int score;
     public bool isGameActive;
-    public Button restartButton;
 
     void Start()
     {
@@ -40,15 +38,17 @@ public class UIManager : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = $"{score}";
+        if(scoreText != null)
+        {
+            scoreText.text = $"{score}";
+        }
+        
     }
 
     public void GameOver()
     {
         isGameActive = false;
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        quitButton.gameObject.SetActive(true);
+        gameOverUI.gameObject.SetActive(true);
 
     }
 
@@ -60,19 +60,14 @@ public class UIManager : MonoBehaviour
     public void PauseMenu()
     {
         isGameActive = false;
-        restartButton.gameObject.SetActive(true);
-        pauseText.gameObject.SetActive(true);
-        resumeButton.gameObject.SetActive(true);
-        quitButton.gameObject.SetActive(true);
+        pauseUI.gameObject.SetActive(true);
     }
 
     public void ResumeButton()
     {
         isGameActive = true;
-        restartButton.gameObject.SetActive(false);
-        pauseText.gameObject.SetActive(false);
-        resumeButton.gameObject.SetActive(false);
-        quitButton.gameObject.SetActive(false);
+        pauseUI.gameObject.SetActive(false);
+        gameOverUI.gameObject.SetActive(false);
     }
     public void QuitButton()
     {
