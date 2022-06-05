@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private SpawnManager spawnManager;
     public float turnSpeed = 20;
     private float horizontalInput;
     public float xRange = 13;
     public GameObject projectilePrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnManager.isGameActive)
+        if (UIManager.Instance.isGameActive)
         {
-            // pelaaja liikkuu vasemmalle ja oikeelle käyttäen horizontal input
+            // pelaaja liikkuu vasemmalle ja oikeelle kï¿½yttï¿½en horizontal input
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * turnSpeed * Time.deltaTime * horizontalInput);
 
-            // Pitää pelaajan ruudulla
+            // Pitï¿½ï¿½ pelaajan ruudulla
             if (transform.position.x < -xRange)
             {
                 transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -42,7 +37,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey("escape"))
             {
                 //Application.Quit();
-                spawnManager.PauseMenu();
+                UIManager.Instance.PauseMenu();
             }
 
         }
