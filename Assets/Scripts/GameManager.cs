@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour
         if (healthText != null)
         {
             healthText.text = $"{health}/{maxHealth}";
+            if (health == 0)
+            {
+                UIManager.Instance.GameOver();
+            }
         }
 
     }
