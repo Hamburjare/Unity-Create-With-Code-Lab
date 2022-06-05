@@ -19,7 +19,14 @@ public class DestroyOutOfBounds : MonoBehaviour
         //jos objecti menee vasemmasta reunasta ulos se tuhoutuu ja peli on ohitse
         else if (transform.position.x < leftBound)
         {
-            UIManager.Instance.GameOver();
+            if (GameManager.Instance.health > 1)
+            {
+                GameManager.Instance.UpdateHealth(MeteorExplode.Instance.damage);
+            }
+            else
+            {
+                UIManager.Instance.GameOver();
+            }
             Destroy(gameObject);
         }
     }

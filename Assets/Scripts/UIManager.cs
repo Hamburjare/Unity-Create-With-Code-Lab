@@ -17,8 +17,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseUI;
     public GameObject gameOverUI;
-    public TextMeshProUGUI scoreText;
-    private int score;
+    
     public bool isGameActive;
 
     void Start()
@@ -30,20 +29,11 @@ public class UIManager : MonoBehaviour
         }
         Instance = this;
 
-        score = 0;
-        UpdateScore(score);
+        
         isGameActive = true;
     }
 
-    public void UpdateScore(int scoreToAdd)
-    {
-        score += scoreToAdd;
-        if(scoreText != null)
-        {
-            scoreText.text = $"{score}";
-        }
-        
-    }
+    
 
     public void GameOver()
     {

@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class MeteorExplode : DetectCollision
 {
+    public static MeteorExplode Instance;
+
     public GameObject explosionFx;
+    
+    public int damage;
+
+    void Start()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     void OnTriggerEnter(Collider other)
     {

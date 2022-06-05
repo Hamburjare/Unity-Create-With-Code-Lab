@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointValue: 2
   explosionFx: {fileID: 3426411318215375083, guid: d6d46380c3214ff4eb1b6b9587c2492d, type: 3}
+  damage: 1
 --- !u!114 &5377110297438384472
 MonoBehaviour:
   m_ObjectHideFlags: 0

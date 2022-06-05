@@ -9,7 +9,7 @@ public class DetectCollision : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        UIManager.Instance.UpdateScore(pointValue);
+        GameManager.Instance.UpdateScore(pointValue);
         Destroy(other.gameObject);
     }
 
